@@ -11,6 +11,8 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
 import { TicketDataService } from './ticket-data.service';
 import { FavoriteDataService } from './favorite-data.service';
+import { AddTicketComponent } from './add-ticket/add-ticket.component';
+import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FavoriteDataService } from './favorite-data.service';
     NavMenuComponent,
     FavoritesComponent,
     TicketDetailComponent,
-    TicketsComponent
+    TicketsComponent,
+    AddTicketComponent,
+    EditTicketComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
