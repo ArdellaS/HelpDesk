@@ -1,1 +1,9 @@
-<p>edit-ticket works!</p>
+<input type="text" [(ngModel)]="item.resolution" placeholder="Resolution" />
+<br />
+<input type="text" [(ngModel)]="item.resolvedby" placeholder="Resolver's name" />
+<br />
+
+
+<button (click)="editTicket(item.ticketid, item.resolution, item.resolvedby)">
+  Resolve Ticket
+</button>

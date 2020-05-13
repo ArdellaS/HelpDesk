@@ -1,11 +1,11 @@
 export interface Ticket {
-  ticketid: number;
-  userid: number;
+  ticketID: number;
+  userID: number;
   title: string;
   category: string;
-  ticketdetail: string;
-  openedby: string;
-  ticketstatus: boolean;
+  ticketDetail: string;
+  openedBy: string;
+  ticketStatus: boolean;
   resolution: string;
-  resolvedby: string;
+  resolvedBy: string;
 }

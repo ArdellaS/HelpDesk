@@ -18,6 +18,7 @@ export class FavoritesComponent {
   
   ngOnInit() {
     //replace with name of get from service
+    this.favoriteData.userID = this.ticketData.userID;
     this.getFavorites();
   }
  
@@ -33,9 +34,9 @@ export class FavoritesComponent {
   }
 
   getFavorites() {
-    this.favoriteData.getFavorites().subscribe(
+    this.favoriteData.getFavorites(this.ticketData.userID).subscribe(
       (data: any) => {
-        this.favoriteData = data;        
+        this.favorites = data;        
       },
       error => console.error(error)
     );

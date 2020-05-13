@@ -1,15 +1,46 @@
-<div>
+<div class="container">
   <hr />
-  <h2>{{myTicket.title}}</h2>
-  <h4>{{myTicket.openedBy}}</h4><br />
 
-  <div>{{myTicket.category}}--{{myTicket.ticketStatus}}</div>
-  <h4> {{myTicket.ticketDetail}}</h4>
+  <div class="container">
+    Username: {{myTicket.openedBy}}<br />
+    Category: {{myTicket.category}}--{{myTicket.ticketStatus}}
+
+    <p> {{myTicket.ticketDetail}}</p>
+
+    <div>
+
+    </div>
+    <!--ngIF may work here is there's a resolution-->
+    <div *ngIf="!myTicket.ticketStatus">
+
+      <input type="text" [(ngModel)]="myTicket.resolution" placeholder="Resolution" />
+      <br />
+      <input type="text" [(ngModel)]="myTicket.resolvedby" placeholder="Resolver's name" />
+      <br />
 
 
-  <div>
-    {{myTicket.resolution}}
-    {{myTicket.resolvedBy}}
+      <button (click)="editTicket(myTicket.ticketID, myTicket.resolution, myTicket.resolvedby)">
+        Resolve Ticket
+      </button>
+    </div>
+    <div *ngIf="myTicket.ticketStatus">
+      Resolution: {{myTicket.resolution}}
+      <br />
+      Resolved by: {{myTicket.resolvedBy}}
+    </div>
+
   </div>
-  <hr />
 </div>
+
+<!--<div>
+  <h3>Resolve Ticket</h3>
+  <input type="text" [(ngModel)]="item.resolution" placeholder="Resolution" />
+  <br />
+  <input type="text" [(ngModel)]="item.resolvedby" placeholder="Resolver's name" />
+  <br />
+
+
+  <button (click)="editTicket(item.ticketid, item.resolution, item.resolvedby)">
+    Resolve Ticket
+  </button>
+</div>-->

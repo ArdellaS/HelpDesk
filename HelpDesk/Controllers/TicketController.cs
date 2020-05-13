@@ -57,8 +57,8 @@ namespace HelpDesk.Controllers
         }
 
         //Edit/close ticket
-        // PUT: api/Ticket/5
-        [HttpPut("{id}")]
+        // PUT: api/Ticket
+        [HttpPut]
         public Object UpdateTicket(Ticket t)
         {
             int result = dal.UpdateTicket(t);

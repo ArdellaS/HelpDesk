@@ -30,8 +30,11 @@ import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: TicketsComponent, pathMatch: 'full' },
+      { path: 'tickets/add', component: AddTicketComponent },
+      { path: 'tickets/edit', component: EditTicketComponent },
       { path: 'tickets', component: TicketsComponent },
       { path: 'favorites', component: FavoritesComponent },
+      
     ])
   ],
   providers: [TicketDataService, FavoriteDataService],

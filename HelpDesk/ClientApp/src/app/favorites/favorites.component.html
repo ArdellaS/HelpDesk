@@ -1,9 +1,12 @@
-<h2>Bookmarked Tickets</h2>
-<div *ngFor="let f of favorites">
-  Ticket: {{f.ticketid}} - {{f.title}}
-</div>
+<div class="container">
+  <h2 class="heading">Favorites</h2>
+  <div *ngFor="let f of favorites" class="heading">
+    <div>
+      Ticket: {{f.title}} - {{f.ticketID}}
+    </div>
+  </div>
 
-<p>Hi</p>
-<div *ngIf="favorites?.length===0">
-  <p>You currently have no favorites</p>
+  <div *ngIf="favorites?.length==0">
+    <p>You currently have no favorites</p>
+  </div>
 </div>

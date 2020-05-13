@@ -1,18 +1,18 @@
 export interface Favorite {
   id: number;
-  userid: number;
-  ticketid: number;
+  userID: number;
+  ticketID: number;
 }
 
 export interface JoinedItem {
   id: number;
-  userid: number;
-  ticketid: number;
+  userID: number;
+  ticketID: number;
   title: string;
   category: string;
-  ticketdetail: string;
-  openedby: string;
-  ticketstatus: boolean;
+  ticketDetail: string;
+  openedBy: string;
+  ticketStatus: boolean;
   resolution: string;
-  resolvedby: string;
+  resolvedBy: string;
 }

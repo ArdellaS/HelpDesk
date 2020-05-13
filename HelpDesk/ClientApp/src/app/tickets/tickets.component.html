@@ -1,13 +1,23 @@
-<h2>Tickets</h2>
-<div *ngFor="let t of tickets">
+<div class="container">
+  <h2 class="heading">Tickets</h2>
 
-    <app-ticket-detail [myTicket]="t"></app-ticket-detail>
-
-</div>
-<!--<ng-container *ngIf="tickets">
-  <div *ngFor="let t of tickets">
-
-    <app-ticket-detail [myTicket]="t"></app-ticket-detail>
-
+  <p>
+    <ng-container *ngFor="let t of tickets; index as i">
+      <button class="btn btn-primary" type="button" (click)="showFullTickets(i)">{{t.title}}</button>
+    </ng-container>
+  </p>
+  <div class="row">
+    <ng-container *ngFor="let t of tickets; index as i">
+      <div class="col" [hidden]="ticketSection[i]" id="menuCollapse{{i}}">
+        <div class="card card-body">
+          <div >
+            <h4 class="buttonSpace">{{t.title}}</h4>
+            <button class="btn btn-primary buttonSpace" type="button" (click)="addFavorite(t.ticketID, t.title)">Add to Favorites</button>
+            
+          </div>
+          <app-ticket-detail [myTicket]="t"></app-ticket-detail>
+        </div>
+      </div>
+    </ng-container>
   </div>
-</ng-container>-->
+</div>

@@ -6,11 +6,11 @@ import { Favorite, JoinedItem } from './interfaces/favorite';
 export class FavoriteDataService {
   userID: number;
   constructor(private http: HttpClient) {
-    //this.userID = Math.floor(Math.random() * 1000000) + 1;
-    this.userID = 1;
+    
+   
   }
-  getFavorites() {
-    return this.http.get<JoinedItem[]>('/api/favorites/');
+  getFavorites(id:number) {
+    return this.http.get<JoinedItem[]>('/api/favorites/'+id);
   }
   deleteFavorite(ticketid: number) {
     return this.http.delete('/api/favorites/' + ticketid);
@@ -19,8 +19,8 @@ export class FavoriteDataService {
   postFavorite(id: number) {
     let item: Favorite = {
       id: 0,
-      ticketid: id,
-      userid: this.userID
+      ticketID: id,
+      userID: this.userID
     };
 
     return this.http.post<Favorite>('/api/favorites', item);
